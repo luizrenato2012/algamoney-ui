@@ -16,11 +16,11 @@ export class LancamentosPesquisaComponent {
     this.lancamentos.push({ 'pessoa': 'Pedro Santos' ,  'descricao': 'Top Club' ,  'vencimento': '2017-06-10' ,
     'pagamento': '' ,  'valor': 120.00,  'tipo': 'RECEITA' });
     this.lancamentos.push({ 'pessoa': 'Ricardo Pereira' ,  'descricao': 'CEMIG' ,  'vencimento': '2017-02-10' ,
-      'pagamento': '2017-02-10' ,  'valor': 110.44, , 'tipo': 'DESPESA' });
+      'pagamento': '2017-02-10' ,  'valor': 110.44, 'tipo': 'DESPESA' });
     this.lancamentos.push({ 'pessoa': 'Josué Mariano' ,  'descricao': 'DMAE' ,  'vencimento': '2017-06-10' ,
       'pagamento': '' ,  'valor': 200.30 , 'tipo': 'DESPESA'});
     this.lancamentos.push({ 'pessoa': 'Pedro Barbosa' ,  'descricao': 'Extra' ,  'vencimento': '2017-03-10' ,
-      'pagamento': '2017-03-10' ,  'valor': 1010.32, , 'tipo': 'RECEITA' });
+      'pagamento': '2017-03-10' ,  'valor': 1010.32, 'tipo': 'RECEITA' });
     this.lancamentos.push({ 'pessoa': 'Henrique Medeiros' ,  'descricao': 'Bahamas' ,  'vencimento': '2017-06-10' ,
       'pagamento': '' ,  'valor': 500.00, 'tipo': 'RECEITA' });
     this.lancamentos.push({ 'pessoa': 'Carlos Santana' ,  'descricao': 'Top Club' ,  'vencimento': '2017-03-10' ,
