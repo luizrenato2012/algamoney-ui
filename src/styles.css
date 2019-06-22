@@ -7,10 +7,11 @@ label {
   font-weight: bold;
 }
 
-@media (min-width: 1200px)
-.container {
-  width: 1170px;
-  margin: 0 auto ; /** left,right calculados pelo navegador centralizando */
+@media (min-width: 1200px){
+  .container {
+    width: 1170px;
+    margin: 0 auto; /** left,right calculados pelo navegador centralizando */
+  }
 }
 
 .col-valor {
