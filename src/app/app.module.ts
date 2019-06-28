@@ -11,6 +11,8 @@ import { CalendarModule } from 'primeng/components/calendar/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton';
 import { DropdownModule } from 'primeng/components/dropdown/dropdown';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { InputMaskModule } from 'primeng/components/inputmask/inputmask';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +20,9 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoaPesquisaComponent } from './pessoa-pesquisa/pessoa-pesquisa.component';
 import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+import { FormsModule } from '@angular/forms';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     LancamentosPesquisaComponent,
     NavbarComponent,
     PessoaPesquisaComponent,
-    LancamentoCadastroComponent
+    LancamentoCadastroComponent,
+    PessoaCadastroComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,10 @@ import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-ca
     CalendarModule,
     BrowserAnimationsModule,
     SelectButtonModule,
-    DropdownModule
+    DropdownModule,
+    CurrencyMaskModule,
+    InputMaskModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
