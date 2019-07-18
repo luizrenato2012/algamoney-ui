@@ -1,0 +1,2 @@
+nome - required , 5 min
+logradouro, numero, bairro, cep , cidade, estado
