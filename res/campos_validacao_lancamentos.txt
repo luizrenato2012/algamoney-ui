@@ -1,4 +1,4 @@
 Informe um(a)
-data de vencimento, descricao
-desabilitar botao de salvar quando o form estiver invalido
-validador em categoria e pessoas apesar de nunca gerar erro pois sempre tem calore selecionado, influi na habilitação do botão salvar
+-> data de vencimento, descricao
+-> desabilitar botao de salvar quando o form estiver invalido
+validador em categoria e pessoas apesar de nunca gerar erro pois sempre tem valore selecionado, influi na habilitação do botão salvar

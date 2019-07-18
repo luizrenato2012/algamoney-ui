@@ -1,5 +1,5 @@
 <div class="container">
-  <form autocomplete="false">
+  <form #frmCompromisso="ngForm" autocomplete="false">
 
     <div class="ui-g">
       <div class="ui-g-12">
@@ -21,7 +21,7 @@
       <div class="ui-g-6 ui-md-3 ui-fluid">
           <label>{{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
           <p-calendar dateFormat="dd/mm/yy" [showIcon]="false" [readonlyInput]="false"
-            ngModel name="pagamento" #pagamento="ngModel"></p-calendar>
+             ngModel name="pagamento" #pagamento="ngModel"></p-calendar>
       </div>
 
 
@@ -45,15 +45,16 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Categoria</label>
-          <p-dropdown [options]="categorias" [autoWidth]="false" required
-            placeholder="Selecione"></p-dropdown>
+          <p-dropdown [options]="categorias" [autoWidth]="false" placeholder="Selecione"
+            required name="categoria" ngModel #categoria="ngModel"></p-dropdown>
       </div>
 
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
           <label for="">Pessoa</label>
-          <p-dropdown [options]="pessoas" [autoWidth]="false" required
-            placeholder="Selecione" [filter]="true"></p-dropdown>
+          <p-dropdown [options]="pessoas" [autoWidth]="false" required placeholder="Selecione"
+            [filter]="true" required="true" ngModel #pessoa="ngModel" name="pessoa">
+          </p-dropdown>
       </div>
 
 
@@ -63,7 +64,7 @@
       </div>
 
       <div class="ui-g-12">
-        <button type="submit" label="Salvar" pButton></button>
+        <button  [disabled]="frmCompromisso.pristine || frmCompromisso.invalid" type="submit" label="Salvar" pButton></button>
         <button type="button" label="Novo" pButton class="ui-button-info"></button>
         <a href="javascript:;">Voltar para a pesquisa</a>
       </div>
