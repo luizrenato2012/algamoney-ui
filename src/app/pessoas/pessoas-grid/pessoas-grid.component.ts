@@ -9,7 +9,7 @@ export class PessoasGridComponent  {
 
   @Input()
   private pessoas = [];
-  
+
   constructor() { }
 
 
