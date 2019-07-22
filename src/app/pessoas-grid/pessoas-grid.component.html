@@ -1,0 +1,23 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <p-dataTable [value]="pessoas">
+      <p-column field="nome" header="Nome"></p-column>
+      <p-column field="cidade" header="Cidade"></p-column>
+      <p-column field="estado" header="Estado" styleClass="col-data"></p-column>
+      <p-column header="Status" styleClass="col-data">
+        <ng-template pTemplate="body" let-pessoa="rowData">
+          <a href="#" style="text-decoration:none"
+            [pTooltip]="pessoa.status? 'Desativar' : 'Ativar'" tooltipPosition="top">{{pessoa.status ? 'Ativo' : 'Inativo'}}</a>
+        </ng-template>
+      </p-column>
+      <p-column field="status" styleClass="col-data">
+        <ng-template pTemplate="body">
+          <a href="#" pButton icon="fa-pencil"
+            pTooltip="Editar" tooltipPosition="top"></a>
+          <button type="button" pButton icon="fa-trash"
+            pTooltip="Excluir" tooltipPosition="top"></button>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+  </div>
+</div>
