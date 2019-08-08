@@ -5,12 +5,12 @@
      <p-column field="descricao" header="Descrição"></p-column>
      <p-column header="Vencimento" styleClass="col-data">
        <ng-template let-lanc="rowData" pTemplate="body" >
-        <span>{{lanc.vencimento | date : 'dd/MM/y'}}</span>
+        <span>{{lanc.dataVencimento | date : 'dd/MM/y'}}</span>
        </ng-template>
      </p-column>
      <p-column header="Pagamento" styleClass="col-data">
        <ng-template pTemplate="body" let-lanc="rowData">
-        <span>{{lanc.pagamento | date: 'dd/MM/y'}}</span>
+        <span>{{lanc.dataPagamento | date: 'dd/MM/y'}}</span>
        </ng-template>
      </p-column>
      <p-column header="Valor" styleClass="col-valor">
