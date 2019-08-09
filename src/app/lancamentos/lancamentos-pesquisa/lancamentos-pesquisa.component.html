@@ -1,19 +1,25 @@
 <div class="container">
+  <form #frm_lancamento="ngForm" (ngSubmit)="pesquisar()">
   <div class="ui-g">
+    
     <div class="ui-g-12">
       <div><h1>Lançamentos</h1></div>
     </div>
 
     <div class="ui-g-12 ui-fluid">
       <label>Descrição</label>
-      <input type="text" pInputText/>
+      <input type="text" pInputText name="descricao" [(ngModel)]="descricao"/>
     </div>
 
     <div class="ui-g-12">
       <label style="display: block">Vencimento</label>
-      <input type="text" pInputText style="width: 95px"/>
+      <!-- <input type="text" pInputText style="width: 95px"/> -->
+      <p-calendar name="dataVencimentoDe" [(ngModel)]="dataVencimentoDe"
+        [inputStyle]="{ width : '95px'}"  dateFormat="dd/mm/yy"></p-calendar>
       <label>Até</label>
-      <input type="text" pInputText style="width: 95px"/>
+      <!-- <input type="text" pInputText style="width: 95px"/>  -->
+      <p-calendar name="dataVencimentoAte" [(ngModel)]="dataVencimentoAte"
+        [inputStyle]="{ width : '95px'}" dateFormat="dd/mm/yy"></p-calendar>
     </div>
 
     <div class="ui-g-12">
@@ -21,5 +27,36 @@
     </div>
   </div>
 
-  <app-lancamentos-grid [lancamentos]="lancamentos"></app-lancamentos-grid>
+  <!-- <app-lancamentos-grid [lancamentos]="lancamentos"></app-lancamentos-grid> -->
+  <div class="ui-g-12">
+    <p-dataTable [value]="lancamentos" [paginator]="true" [rows]="10" [responsive]="true">
+      <p-column field="pessoa" header="Pessoa"></p-column>
+      <p-column field="descricao" header="Descrição"></p-column>
+      <p-column header="Vencimento" styleClass="col-data">
+        <ng-template let-lanc="rowData" pTemplate="body" >
+         <span>{{lanc.dataVencimento | date : 'dd/MM/y'}}</span>
+        </ng-template>
+      </p-column>
+      <p-column header="Pagamento" styleClass="col-data">
+        <ng-template pTemplate="body" let-lanc="rowData">
+         <span>{{lanc.dataPagamento | date: 'dd/MM/y'}}</span>
+        </ng-template>
+      </p-column>
+      <p-column header="Valor" styleClass="col-valor">
+        <ng-template let-lanc="rowData" pTemplate="body">
+         <span [style.color]="lanc.tipo=='DESPESA' ? 'red' : 'blue'">{{lanc.valor | number: '1.2-2'}}</span>
+        </ng-template>
+      </p-column>
+      <p-column styleClass="col-acoes">
+       <ng-template pTemplate="body">
+         <a pButton icon="fa-pencil" pTooltip="Editar" tooltipoPosition="top"></a>
+         <button pButton icon="fa-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+       </ng-template>
+      </p-column>
+    </p-dataTable>
+    <div class="ui-g-12">
+       <a pButton label="Novo Lançamento"></a>
+     </div>
+   </div>
+  </form>
 </div>

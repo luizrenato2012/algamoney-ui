@@ -6,7 +6,6 @@ import { SelectButtonModule } from 'primeng/components/selectbutton/selectbutton
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/components/calendar/calendar';
 import { InputTextModule } from 'primeng/components/inputtext/inputtext';
@@ -32,8 +31,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   declarations: [
     LancamentosCadastroComponent,
-    LancamentosPesquisaComponent,
-    LancamentosGridComponent
+    LancamentosPesquisaComponent
   ],
   exports : [
     LancamentosCadastroComponent,

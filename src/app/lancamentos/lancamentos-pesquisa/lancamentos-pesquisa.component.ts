@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LancamentosService } from '../lancamentos.service';
+import { LancamentosService, FiltroPesquisa } from '../lancamentos.service';
 
 @Component({
   selector: 'app-lancamentos-pesquisa',
@@ -10,14 +10,26 @@ export class LancamentosPesquisaComponent implements OnInit {
   
   title = 'algamoney-ui';
   lancamentos= [];
+  descricao="";
+  dataVencimentoDe: Date;
+  dataVencimentoAte: Date;
   
   constructor(private lancamentoService : LancamentosService) {
   }
   
   ngOnInit(): void {
-    console.log('on init');
-    this.lancamentoService.pesqsuisa()
-      .then(retorno => this.lancamentos=retorno);
+  }
+
+  pesquisar(): void {
+    const filtro  = { 
+    "descricao" : this.descricao,
+    "dataVencimentoDe" : this.dataVencimentoDe,
+    "dataVencimentoAte" : this.dataVencimentoAte
+    };
+    
+    this.lancamentoService.pesquisa(filtro)
+      .then(retorno => this.lancamentos=retorno,
+            erro => console.log(`Erro ao pesquisar:\n ${JSON.stringify(erro)}`) );
   }
 
 }
